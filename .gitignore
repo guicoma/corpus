@@ -1,5 +1,10 @@
 .vs/*
 .vscode/*
 __pycache__
-.source/*
-.result/*
+*.pyc
+
+source/*
+!source/.gitkeep
+
+result/*
+!result/.gitkeep 
