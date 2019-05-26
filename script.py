@@ -1,10 +1,8 @@
 import os
 import json
 import re
-import xml.etree.ElementTree as ET
 from bs4 import BeautifulSoup, Comment
 from recursivejson import extract_values
-from xml.dom.minidom import parse, parseString
 
 files = os.listdir('source')
 
@@ -65,57 +63,3 @@ for file in files:
     f1.close()
     f2.close()
     read_file.close()
-        #raise Exception("Debug")
-
-        # def iterator(parents, nested=False):
-        #     for child in reversed(parents):
-        #         if nested:
-        #             if len(child) >= 1:
-        #                 iterator(child, nested=True)
-        #         if child.tag == 'textarea':
-        #             parents.remove(child)
-        #         elif child.tag == 'i':
-        #             parents.remove(child)
-        #         elif child.tag == 'em':
-        #             parents.remove(child)
-        #         elif 'class' in child.attrib:
-        #             if 'Emphasis' in child.get('class'):
-        #                 parents.remove(child)
-
-        # string = unicode(soup)
-        # stringSource = '<source>'+string+'</source>'
-        # pageSanitized = stringSource.replace('\r\n', '').replace('[', '').replace(']', '').replace('<p', '\r\n<p').replace('<br>', '\r\n').replace('<br/>', '\r\n').strip().encode('utf-8')
-
-        # try:
-        #     root = ET.fromstring(pageSanitized)
-        #     if len(list(root)) <= 0:
-        #         raise Exception('Tag seems not to contain the text, perhaps it is an image:')
-        #     #iterator(root, nested=True)
-        #     resultText = ET.tostring(root, encoding='utf-8', method='text')
-        #     print "----",idx,"----"
-        #     if idx % 2 == 0:
-        #         f2.write(resultText)
-        #         # print "Spanish"
-        #         # print resultText[0:20]
-        #     else:
-        #         f1.write(resultText)
-        #         # print "English"
-        #         # print resultText[0:20]
-            
-        # except ET.ParseError as p_error:
-        #     print 'Parse error',pageSanitized
-        #     print p_error
-        #     continue
-        # except Exception as g_error:
-        #     print 'General error'
-        #     print g_error
-        #     continue
-        # except:
-        #     print 'Oops'
-        #     continue
-
-
-    # f1.close()
-    # f2.close()
-    # read_file.close()
-    #print(resultText)
